@@ -46,7 +46,7 @@ public class GogWebTests extends TestBase {
     }
 
     @Test
-    @Description("Soon to be implemented by you (or QA.GURU engineers)")
+    @Description("Раздел Магазин")
     @DisplayName("открыть раздел Магазин")
     void generatedTest() {
         step("open https://www.gog.com/", () -> {
@@ -73,14 +73,13 @@ public class GogWebTests extends TestBase {
     }
     @Test
     @Description("Раздел Магазин")
-    @DisplayName("Проверить раскрывающееся окно с играми")
+    @DisplayName("Проверить раскрывающееся окно с играми в подразделе Приключения")
     void gamesSubWindow () {
         step("Открыть сайт", () ->
                 open(baseUrl));
         $(".menu__container").$(".menu-main").$(".js-menu-link").hover();
         $(".menu-store__submenu").$(".menu-section-layer").sibling(7).hover();
         $(".menu-section-layer--adventure").shouldHave(Condition.text("приключения"));
-        sleep(3000);
     }
 
     @Test
@@ -106,10 +105,12 @@ public class GogWebTests extends TestBase {
     void someGameSearch () {
         step("Открыть сайт", () ->
                 open(baseUrl));
+        step("Открыть поиск и ввести название игры", () -> {
         $(".menu__container").$(".js-menu-search").click();
         $(".menu-search-input").click();
         $(".menu-search-input__field").setValue("neverwinter nights");
-        sleep(4000);
-        $(".menu-search__results-list").shouldHave(Condition.text("neverwinter nights"));
+        });
+        step("Проверка наличия искомой игры", () ->
+        $(".menu-search__results-list").shouldHave(Condition.text("neverwinter nights")));
     }
 }

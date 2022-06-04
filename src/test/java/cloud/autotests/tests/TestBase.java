@@ -21,6 +21,8 @@ public class TestBase {
     static void beforeAll() {
         DriverSettings.configure();
         Configuration.baseUrl = "https://www.gog.com/ru";
+        Configuration.browserSize = "1920x1080";
+
     }
 
     @BeforeEach
