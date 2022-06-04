@@ -31,8 +31,7 @@ public class TestBase {
 
     @BeforeEach
     public void beforeEach() {
-        step("Открыть сайт", () ->
-                open(baseUrl));
+        open("https://www.gog.com/ru");
     }
 
     @AfterEach
