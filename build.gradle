@@ -67,8 +67,15 @@ tasks.withType(Test) {
     }
 }
 
+
 task demowebshop(type: Test) {
     useJUnitPlatform {
         includeTags 'demowebshop'
     }
 }
+task gogtests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'gogtests'
+    }
+}
+

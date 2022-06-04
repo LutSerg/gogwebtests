@@ -8,6 +8,7 @@ import cloud.autotests.pages.SearchPanel;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -15,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@Tag("gogtests")
 public class GogWebTests extends TestBase {
 
 
