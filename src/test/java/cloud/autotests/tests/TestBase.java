@@ -30,7 +30,7 @@ public class TestBase {
     @BeforeEach
     public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.baseUrl = "https://www.gog.com/";
+        Configuration.baseUrl = "https://www.gog.com/ru";
         step("Открыть сайт", () ->
                 open(baseUrl));
     }
