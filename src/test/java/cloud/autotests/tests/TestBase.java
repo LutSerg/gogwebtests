@@ -24,13 +24,13 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         DriverSettings.configure();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://www.gog.com/ru";
         }
 
     @BeforeEach
     public void beforeEach() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.baseUrl = "https://www.gog.com/ru";
         step("Открыть сайт", () ->
                 open(baseUrl));
     }
