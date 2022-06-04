@@ -14,6 +14,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
+
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
@@ -28,6 +32,8 @@ public class TestBase {
     @BeforeEach
     public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        step("Открыть сайт", () ->
+                open(baseUrl));
     }
 
     @AfterEach
